@@ -1,4 +1,4 @@
-/*#include <opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <iostream>
 #include <cmath>
 
@@ -61,4 +61,4 @@ int main() {
 	waitKey(0);
 
 	return 0;
-}*/
+}

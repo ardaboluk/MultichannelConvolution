@@ -21,5 +21,34 @@
     <ClCompile Include="conv3dVerify.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rectangle.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="convolution.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kernel.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

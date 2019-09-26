@@ -21,6 +21,17 @@
   <ItemGroup>
     <ClCompile Include="conv3d.cpp" />
     <ClCompile Include="conv3dVerify.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="convolution.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="image.h" />
+    <ClInclude Include="kernel.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="rectangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
