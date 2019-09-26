@@ -12,6 +12,6 @@ namespace conv {
 		Kernel<T>& kernel;
 	public:
 		Convolution(const Image<T> const&, const Kernel<T> const&);
-		Image* convolute(const Rectangle);
+		virtual Image* convolute(const Rectangle) = 0;
 	};
 }
