@@ -10,5 +10,6 @@ namespace conv {
 		Rectangle(Point, Point);
 		Point getP1();
 		Point getP2();
+		int getArea();
 	};
 }
