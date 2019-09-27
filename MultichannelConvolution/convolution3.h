@@ -1,8 +1,8 @@
 #pragma once
 
 #include "opencv2/opencv.hpp"
-#include "../ConvolutionCore/convolution.h"
-#include "../ConvolutionCore/rectangle.h"
+#include "convolution.h"
+#include "rectangle.h"
 #include "image3.h"
 #include "kernel3.h"
 

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "opencv2/opencv.hpp"
-#include "../ConvolutionCore/image.h"
-#include "../ConvolutionCore/data.h"
+#include "image.h"
+#include "data.h"
 
 using namespace conv;
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "opencv2/opencv.hpp"
-#include "../ConvolutionCore/kernel.h"
+#include "kernel.h"
 
 using namespace conv;
 
