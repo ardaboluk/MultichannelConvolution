@@ -28,6 +28,7 @@ Convolution3::Convolution3(Image3* image, Kernel3* kernel) {
 }
 
 Image3* Convolution3::convolute(Rectangle convRegion) const{
+
 	if (convRegion.getArea() < (kernel->getWidth() * kernel->getHeight())) {
 		throw new std::invalid_argument("Region cannot be smaller than the kernel.");
 	}
@@ -66,11 +67,11 @@ Image3* Convolution3::convolute(Rectangle convRegion) const{
 			sumg = sumg < 0 ? 0 : (sumg > 255 ? 255 : sumg);
 			sumr = sumr < 0 ? 0 : (sumr > 255 ? 255 : sumr);
 
-
-
-			imgFiltered.at<Vec3b>(currentRow - 1, currentCol - 1)[0] = (uchar)sumb;
-			imgFiltered.at<Vec3b>(currentRow - 1, currentCol - 1)[1] = (uchar)sumg;
-			imgFiltered.at<Vec3b>(currentRow - 1, currentCol - 1)[2] = (uchar)sumr;
+			uchar* result_row_ptr = resultMat->ptr<uchar>(currentRow - startRow);
+			uchar* result_col_ptr = result_row_ptr + ((currentCol - startCol) * 3);
+			result_col_ptr[0] = sumb;
+			result_col_ptr[1] = sumg;
+			result_col_ptr[2] = sumr;
 		}
 	}
 	
