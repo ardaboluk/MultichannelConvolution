@@ -5,11 +5,11 @@
 namespace conv {
 	class Rectangle {
 	private:
-		Point p1, p2;
+		Point pLeftUpper, pRightLower;
 	public:
 		Rectangle(Point, Point);
-		Point getP1();
-		Point getP2();
+		Point getPLeftUpper();
+		Point getPRightLower();
 		int getArea();
 	};
 }

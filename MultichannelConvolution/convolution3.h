@@ -10,6 +10,7 @@ class Convolution3 : public Convolution<cv::Mat> {
 private:
 	Image3* image;
 	Kernel3* kernel;
+	cv::Mat borderedImage;
 public:
 	Convolution3(Image3*, Kernel3*);
 	Image3* convolute(Rectangle) const;

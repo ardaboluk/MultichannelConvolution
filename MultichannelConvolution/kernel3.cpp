@@ -9,6 +9,9 @@ Kernel3::Kernel3(cv::Mat* cvMatrix) {
 	else if (cvMatrix->channels() != 3) {
 		throw std::invalid_argument("cv::Mat object should have 3 channels.");
 	}
+	else if ((cvMatrix->rows != cvMatrix->cols) || (cvMatrix->rows % 2 == 0)) {
+		throw std::invalid_argument("cv::Mat should be square matrix of odd size.");
+	}
 	data = new Data<cv::Mat>(cvMatrix);
 }
 
