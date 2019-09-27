@@ -8,6 +8,6 @@ namespace conv {
 	template <class T>
 	class Convolution {
 	public:
-		virtual Image<T>* convolute(Rectangle) const = 0;
+		virtual Image<T>* convolute(Rectangle) = 0;
 	};
 }

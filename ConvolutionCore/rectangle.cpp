@@ -3,7 +3,7 @@
 #include <cmath>
 
 namespace conv {
-	Rectangle::Rectangle(Point pLeftUpper, Point prightLower) : pLeftUpper(0,0), pRightLower(0,0) {
+	Rectangle::Rectangle(Point pLeftUpper, Point pRightLower) : pLeftUpper(0,0), pRightLower(0,0) {
 		this->pLeftUpper = pLeftUpper;
 		this->pRightLower = pRightLower;
 	}

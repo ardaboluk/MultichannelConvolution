@@ -7,6 +7,9 @@ namespace conv {
 		T* data;
 	public:
 		Data(T* p_data) : data(p_data) {}
+		~Data() {
+			delete data;
+		}
 
 		T* getData() const{
 			return this->data;

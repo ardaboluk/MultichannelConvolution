@@ -4,10 +4,10 @@
 
 Image3::Image3(cv::Mat* cvMatrix){
 	if (cvMatrix == NULL) {
-		throw std::invalid_argument("cv::Mat object cannot be null.");
+		throw std::invalid_argument("cv::Mat object cannot be null. Image3.");
 	}
 	else if(cvMatrix->channels() != 3){
-		throw std::invalid_argument("cv::Mat object should have 3 channels.");
+		throw std::invalid_argument("cv::Mat object should have 3 channels. Image3.");
 	}
 	data = new Data<cv::Mat>(cvMatrix);
 }

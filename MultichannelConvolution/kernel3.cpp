@@ -4,13 +4,13 @@
 
 Kernel3::Kernel3(cv::Mat* cvMatrix) {
 	if (cvMatrix == NULL) {
-		throw std::invalid_argument("cv::Mat object cannot be null.");
+		throw std::invalid_argument("cv::Mat object cannot be null. Kernel3.");
 	}
 	else if (cvMatrix->channels() != 3) {
-		throw std::invalid_argument("cv::Mat object should have 3 channels.");
+		throw std::invalid_argument("cv::Mat object should have 3 channels. Kernel3.");
 	}
 	else if ((cvMatrix->rows != cvMatrix->cols) || (cvMatrix->rows % 2 == 0)) {
-		throw std::invalid_argument("cv::Mat should be square matrix of odd size.");
+		throw std::invalid_argument("cv::Mat should be square matrix of odd size. Kernel3.");
 	}
 	data = new Data<cv::Mat>(cvMatrix);
 }

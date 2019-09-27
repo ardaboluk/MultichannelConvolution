@@ -13,5 +13,5 @@ private:
 	cv::Mat borderedImage;
 public:
 	Convolution3(Image3*, Kernel3*);
-	Image3* convolute(Rectangle) const;
+	Image3* convolute(Rectangle);
 };
