@@ -11,7 +11,7 @@ using namespace std;
 
 Kernel3* Util::readKernel3FromFile(string fileName) {
 	
-	Kernel3* kernelImage = NULL;
+	Kernel3* kernel = NULL;
 	cv::Mat* kernelData = NULL;
 
 	int kernelWidth = 0, kernelHeight = 0, kernelDepth = 0;
@@ -42,7 +42,7 @@ Kernel3* Util::readKernel3FromFile(string fileName) {
 		}
 	}
 
-	kernelImage = new Kernel3(kernelData);
+	kernel = new Kernel3(kernelData);
 
-	return kernelImage;
+	return kernel;
 }

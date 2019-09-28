@@ -7,7 +7,7 @@ using namespace conv;
 
 class Kernel3 : public Kernel<cv::Mat> {
 private:
-	Data<cv::Mat>* data;
+	DataWrapper<cv::Mat>* dataWrapper;
 public:
 	Kernel3(cv::Mat*);
 	~Kernel3();
@@ -15,5 +15,5 @@ public:
 	int getWidth() const;
 	int getHeight() const;
 	int getDepth() const;
-	Data<cv::Mat>* getData() const;
+	DataWrapper<cv::Mat>* getDataWrapper() const;
 };

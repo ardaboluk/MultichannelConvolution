@@ -2,14 +2,11 @@
 
 namespace conv {
 	template <class T>
-	class Data {
+	class DataWrapper {
 	private:
 		T* data;
 	public:
-		Data(T* p_data) : data(p_data) {}
-		~Data() {
-			delete data;
-		}
+		DataWrapper(T* p_data) : data(p_data) {}
 
 		T* getData() const{
 			return this->data;

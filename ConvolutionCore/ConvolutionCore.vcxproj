@@ -24,7 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="convolution.h" />
-    <ClInclude Include="data.h" />
+    <ClInclude Include="datawrapper.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="kernel.h" />
     <ClInclude Include="point.h" />

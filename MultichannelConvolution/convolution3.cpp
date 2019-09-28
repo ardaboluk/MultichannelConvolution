@@ -2,7 +2,6 @@
 #include "convolution3.h"
 #include <exception>
 #include <cmath>
-
 #include <iostream>
 
 Convolution3::Convolution3(Image3* image, Kernel3* kernel) {
@@ -24,8 +23,8 @@ Convolution3::Convolution3(Image3* image, Kernel3* kernel) {
 
 	int borderedImageWidth = image->getWidth() + (kernel->getWidth() - 1);
 	int borderedImageHeight = image->getHeight() + (kernel->getHeight() - 1);
-	this->borderedImage = cv::Mat(borderedImageHeight, borderedImageWidth, image->getData()->getData()->type());
-	cv::copyMakeBorder(*image->getData()->getData(), borderedImage, kernel->getHeight() / 2, kernel->getHeight() / 2,
+	this->borderedImage = cv::Mat(borderedImageHeight, borderedImageWidth, image->getDataWrapper()->getData()->type());
+	cv::copyMakeBorder(*image->getDataWrapper()->getData(), borderedImage, kernel->getHeight() / 2, kernel->getHeight() / 2,
 		kernel->getWidth() / 2, kernel->getWidth() / 2, cv::BORDER_REFLECT);
 }
 
@@ -41,22 +40,18 @@ Image3* Convolution3::convolute(Rectangle convRegion){
 
 	int resultMatRows = abs(convRegion.getPRightLower().getY() - convRegion.getPLeftUpper().getY()) + 1;
 	int resultMatCols = abs(convRegion.getPRightLower().getX() - convRegion.getPLeftUpper().getX()) + 1;
-	cv::Mat* resultMat = new cv::Mat(resultMatRows, resultMatCols, this->image->getData()->getData()->type());
+	cv::Mat* resultMat = new cv::Mat(resultMatRows, resultMatCols, this->image->getDataWrapper()->getData()->type());
 
 	int startRow = convRegion.getPLeftUpper().getY() + kernel->getHeight() / 2;
 	int endRow = convRegion.getPRightLower().getY() + kernel->getHeight() / 2;
 	int startCol = convRegion.getPLeftUpper().getX() + kernel->getHeight() / 2;
 	int endCol = convRegion.getPRightLower().getX() + kernel->getHeight() / 2;
 
-	cv::Mat* kernel_ptr = kernel->getData()->getData();
+	cv::Mat* kernel_ptr = kernel->getDataWrapper()->getData();
 
 	for (int currentRow = startRow; currentRow <= endRow; currentRow++) {
 		for (int currentCol = startCol; currentCol <= endCol; currentCol++) {
 			float sumb = 0, sumg = 0, sumr = 0;
-			//DEBUG
-			if (currentRow == 398 && currentCol == 656) {
-				int a = 1;
-			}
 			for (int i = -(kernel->getHeight()/2); i <= kernel->getHeight()/2; i++) {
 				uchar* mat_row_ptr = borderedImage.ptr<uchar>(currentRow + i);
 				float* kernel_row_ptr = kernel_ptr->ptr<float>(i + kernel->getHeight() / 2);
