@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __KERNEL_H
+#define __KERNEL_H
 
 #include "image.h"
 
@@ -8,3 +9,5 @@ namespace conv {
 
 	};
 }
+
+#endif

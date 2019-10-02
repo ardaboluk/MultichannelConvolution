@@ -1,7 +1,7 @@
-#pragma once
+#ifndef __CONVOLUTION_H
+#define __CONVOLUTION_H
 
 #include "image.h"
-#include "kernel.h"
 #include "rectangle.h"
 
 namespace conv {
@@ -11,3 +11,5 @@ namespace conv {
 		virtual Image<T>* convolute(Rectangle) = 0;
 	};
 }
+
+#endif

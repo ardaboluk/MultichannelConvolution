@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __POINT_H
+#define __POINT_H
 
 namespace conv {
 	class Point {
@@ -10,3 +11,5 @@ namespace conv {
 		int getY();
 	};
 }
+
+#endif

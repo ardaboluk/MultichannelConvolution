@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __DATAWRAPPER_H
+#define __DATAWRAPPER_H
 
 namespace conv {
 	template <class T>
@@ -13,3 +14,4 @@ namespace conv {
 		}
 	};
 }
+#endif

@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
 	else {
 		getFileNamesFromUser();
 	}
-	char delim[1] = { '.' };
 	resultImageFileName = imageFileName.substr(0, imageFileName.find("."));
 	resultImgeFileNameOpenCV = string(resultImageFileName);
 	resultImageFileName += "_filtered.jpg";

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __IMAGE_H
+#define __IMAGE_H
 
 #include "datawrapper.h"
 
@@ -12,3 +13,5 @@ namespace conv {
 		virtual DataWrapper<T>* getDataWrapper() const = 0;
 	};
 }
+
+#endif
