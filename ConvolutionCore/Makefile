@@ -1,5 +1,5 @@
-CC = g++ # C compiler
-CFLAGS = -c -fPIC -Wall -Werror -O2 -g # C flags
+CXX = g++ # C compiler
+CXXFLAGS = -c -fPIC -Wall -Werror -O2 -g # C flags
 LDFLAGS = -shared  # linking flags
 RM = rm -f  # rm command
 TARGET_LIB = libconvolutioncore.so # target lib
@@ -11,10 +11,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: ${TARGET_LIB}
 
 $(TARGET_LIB): $(OBJS)
-	$(CC) ${LDFLAGS} -o $@ $^
+	$(CXX) ${LDFLAGS} -o $@ $^
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $<
 
 .PHONY: clean
 clean:

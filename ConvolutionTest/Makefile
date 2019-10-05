@@ -1,8 +1,8 @@
-CC = g++ # C compiler
+CXX = g++ # C compiler
 INCLUDEPATH = -I../ConvolutionCore -I../MultichannelConvolution
 LIBRARYPATH = -L../ConvolutionCore -L../MultichannelConvolution
-LIBS = -lconvolutioncore -lmcconvolution `pkg-config --cflags --libs opencv`
-CFLAGS = $(INCLUDEPATH) -Wall -O2 -g # C flags
+LIBS = -lconvolutioncore -lmCXXonvolution `pkg-config --cflags --libs opencv`
+CXXFLAGS = $(INCLUDEPATH) -Wall -O2 -g # C flags
 LDFLAGS = $(LIBRARYPATH) # linking flags
 RM = rm -f  # rm command
 TARGET = ConvolutionTest # target
@@ -14,10 +14,10 @@ OBJS = 	$(SRCS:.cpp=.o)
 all: ${TARGET}
 
 $(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $<
 
 .PHONY: clean
 clean:
