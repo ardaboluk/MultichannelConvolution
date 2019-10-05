@@ -2,8 +2,8 @@ CC = g++ # C compiler
 INCLUDEPATH = -I../ConvolutionCore
 LIBRARYPATH = -L../ConvolutionCore
 LIBS = -lconvolutioncore
-CFLAGS = $(INCLUDEPATH) $(LIBRARYPATH) -c -fPIC -Wall -Werror -O2 -g # C flags
-LDFLAGS = -shared  # linking flags
+CFLAGS = $(INCLUDEPATH) -c -fPIC -Wall -Werror -O2 -g # C flags
+LDFLAGS = $(LIBRARYPATH) -shared  # linking flags
 RM = rm -f  # rm command
 TARGET_LIB = libmcconvolution.so # target lib
 
@@ -14,10 +14,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: ${TARGET_LIB}
 
 $(TARGET_LIB): $(OBJS)
-	$(CC) ${LDFLAGS} -o $@ $^
+	$(CC) ${LDFLAGS} -o $@ $^ $(LIBS)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
 
 .PHONY: clean
 clean:

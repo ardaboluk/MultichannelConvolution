@@ -13,8 +13,8 @@ all: ${TARGET_LIB}
 $(TARGET_LIB): $(OBJS)
 	$(CC) ${LDFLAGS} -o $@ $^
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $<
 
 .PHONY: clean
 clean:

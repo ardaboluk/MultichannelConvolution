@@ -16,6 +16,9 @@
 *.o
 *.so
 
+*.jpg
+*.png
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
